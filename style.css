@@ -2,6 +2,10 @@
   background-color: transparent;
 }
 
+button {
+  pointer-events: auto;
+}
+
 #app {
   min-width: 247px;
 }
