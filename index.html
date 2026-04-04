@@ -342,7 +342,7 @@ header {
   }
 }
 </style>
-  
+  <script src="script.js"></script>
   </head>
   <body>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -368,54 +368,3 @@ header {
 </div>
   </body>
 </HTML>
-  <script>
- const  scoreBoard  =  {
-  _round : 0 ,
-  _home : 0 ,
-  _weg : 0 ,
-  bereik : [ 0 ,  99 ] ,
-  set  home ( val )  {
-    dit . _home  =  val ;
-    document.querySelector ( ' # team1 ' ) . textContent = this._home ;​  
-  } ,
-  set  away ( val )  {
-    dit . _weg  =  val ;
-    document.querySelector ( ' # team2 ' ) . textContent = this._away ;​  
-  } ,
-  stel  rond ( waarde )  in {
-    dit . _round  =  val ;
-    document.querySelector ( ' # roundnum ' ) . textContent = this._round ;​  
-  } ,
-  checkRangeAndUpdate ( waarde ,  operator ,  stap )  {
-    // destructure max en min
-    const  [ min ,  max ]  =  this . range ;
-    // Stel de getter in op een underscore-waarde voor toegang tot het object
-    const  getter  =  `_ ${ value } ` ;
-    als ( operator  ===  '+'  &&  ( deze [ getter ]  +  stap )  -  1  <  max )  {
-      // Als de operator optellen is en de verhoging de maximale verhoging per stap niet overschrijdt
-      deze [ waarde ]  =  deze [ getter ]  +  stap ;
-    }
-    als ( operator  ===  '-'  &&  ( deze [ getter ]  -  stap )  +  1  >  min )  {
-      // Als de operator 'sub' is en de verlaging niet onder het minimum komt, verlaag dan stapsgewijs.
-     deze [ waarde ]  =  deze [ getter ]  -  stap ;
-    }
-  } ,
-  homeplus :    [ 'home' ,  '+' ,  1 ] ,
-  homeminus :   [ 'home' ,  '-' ,  1 ] ,
-  wegplus :    [ 'weg' ,  '+' ,  1 ] ,
-  wegminus :   [ 'weg' ,  '-' ,  1 ] ,
-  roundplus :   [ 'round' ,  '+' ,  1 ] ,
-  roundminus : [ 'round' ,  '-' ,  1 ]
-}
-
-functie  init ( )  {
-  const  container  =  document.querySelector ( '. scorecontainer ' ) ;
-  container.addEventListener ( ' click ' , function ( e ) {  
-    // Voer de functie uit met parameters die overeenkomen met de ID van de knop.
-    scoreBoard.checkRangeAndUpdate.apply ( scoreBoard , scoreBoard [ e.target.id ] ) ;​​​​​​​​ 
-  } ) ;
-}
-
-init ( ) ;
-
-    </script>
