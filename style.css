@@ -49,7 +49,7 @@ header {
   padding: 10px 90px 15px 90px;
   border-radius: 10px;
   position: absolute;
-  z-index: -10;
+  z-index: 10;
   box-shadow: inset 0px -5px 1px #234d8e, 6px 7px 3px rgba(66, 66, 66, 0.5);
 }
 
