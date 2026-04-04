@@ -44,9 +44,9 @@ function init() {
     scoreBoard.checkRangeAndUpdate.apply(scoreBoard, scoreBoard[e.target.id]);
   });
 }
-
+document.addEventListener("DOMContentLoaded", () => {
 init();
-
+})
 // OLD CODE
 
 // var round = 0, homeScore = 0, awayScore = 0;
