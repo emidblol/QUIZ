@@ -1,3 +1,21 @@
+// Source - https://stackoverflow.com/a/5448595
+// Posted by Bakudan, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-05-23, License - CC BY-SA 4.0
+
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
+
+
 const scoreBoard = {
   _round: 0,
   _home: 0,
@@ -43,6 +61,8 @@ function init() {
     // run function with params that match the buttons id
     scoreBoard.checkRangeAndUpdate.apply(scoreBoard, scoreBoard[e.target.id]);
   });
+  findGetParameter('team1') && (document.getElementById('1').textContent = findGetParameter('team1'));
+  findGetParameter('team2') && (document.getElementById('2').textContent = findGetParameter('team2'));
 }
 document.addEventListener("DOMContentLoaded", () => {
 init();
